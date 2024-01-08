@@ -1,0 +1,112 @@
+
+
+ContextMap TiendaUtilesEscolaresMap {
+    contains CatalogoProductos 
+    contains GestionInventario 
+    contains ServiciosFotocopias 
+    contains ProcesamientoPedidos 
+    contains GestionClientes 
+    contains ServiciosEntrega 
+    contains GestionVentas 
+    contains Facturacion 
+
+    CatalogoProductos [SK]<->[SK] GestionInventario
+    CatalogoProductos [SK]<->[SK] ProcesamientoPedidos
+    CatalogoProductos [SK]<->[SK] GestionVentas
+    ProcesamientoPedidos [SK]<->[SK] GestionClientes
+    GestionVentas [SK]<->[SK] ServiciosFotocopias
+    GestionVentas [SK]<->[SK] ServiciosEntrega
+    GestionVentas [SK]<->[SK] Facturacion
+    
+}
+
+BoundedContext CatalogoProductos {
+    Module catalogo {
+        basePackage = com.ejemplo.tienda.catalogo
+
+        Aggregate CatalogoProductos  {
+            Entity Producto
+            ValueObject DetallesProducto
+           
+        }
+    }
+}
+
+BoundedContext GestionInventario {
+    Module inventario {
+        basePackage = com.ejemplo.tienda.inventario
+
+        Aggregate GestionInventario  {
+            Entity ProductoInventario
+            ValueObject DetallesInventario
+                   }
+    }
+}
+
+BoundedContext ServiciosFotocopias {
+    Module fotocopias {
+        basePackage = com.ejemplo.tienda.fotocopias
+
+        Aggregate ServiciosFotocopias  {
+            Entity Copiadora
+            ValueObject DetallesCopia
+        }
+    }
+}
+
+BoundedContext ProcesamientoPedidos {
+    Module pedidos {
+        basePackage = com.ejemplo.tienda.pedidos
+
+        Aggregate ProcesamientoPedidos  {
+            Entity Pedido
+            ValueObject DetallesPedido
+            
+        }
+    }
+}
+
+BoundedContext GestionClientes {
+    Module clientes {
+        basePackage = com.ejemplo.tienda.clientes
+
+        Aggregate GestionClientes  {
+            Entity Cliente
+            ValueObject DetallesCliente
+        }
+    }
+}
+
+BoundedContext ServiciosEntrega {
+    Module entrega {
+        basePackage = com.ejemplo.tienda.entrega
+
+        Aggregate ServiciosEntrega  {
+            Entity ServicioEntrega
+            ValueObject DetallesEntrega
+        }
+    }
+}
+
+BoundedContext GestionVentas {
+    Module ventas {
+        basePackage = com.ejemplo.tienda.ventas
+
+        Aggregate GestionVentas  {
+            Entity Venta
+            ValueObject DetallesVenta
+        }
+    }
+}
+
+BoundedContext Facturacion {
+    Module facturacion {
+        basePackage = com.ejemplo.tienda.facturacion
+
+        Aggregate Facturacion {
+            Entity Factura
+            ValueObject DetallesFactura
+            
+        }
+    }
+}
