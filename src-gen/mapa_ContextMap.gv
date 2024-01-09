@@ -1,0 +1,18 @@
+digraph "ContextMapGraph" {
+graph ["imagepath"="/tmp/GraphvizJava"]
+"CatalogoProductos" ["margin"="0.3","orientation"="184","shape"="egg","fontsize"="16","style"="bold","label"="CatalogoProductos\n","fontname"="sans-serif"]
+"ProcesamientoPedidos" ["margin"="0.3","orientation"="207","shape"="egg","fontsize"="16","style"="bold","label"="ProcesamientoPedidos\n","fontname"="sans-serif"]
+"GestionClientes" ["margin"="0.3","orientation"="298","shape"="egg","fontsize"="16","style"="bold","label"="GestionClientes\n","fontname"="sans-serif"]
+"GestionVentas" ["margin"="0.3","orientation"="66","shape"="egg","fontsize"="16","style"="bold","label"="GestionVentas\n","fontname"="sans-serif"]
+"ServiciosFotocopias" ["margin"="0.3","orientation"="248","shape"="egg","fontsize"="16","style"="bold","label"="ServiciosFotocopias\n","fontname"="sans-serif"]
+"ServiciosEntrega" ["margin"="0.3","orientation"="324","shape"="egg","fontsize"="16","style"="bold","label"="ServiciosEntrega\n","fontname"="sans-serif"]
+"Facturacion" ["margin"="0.3","orientation"="84","shape"="egg","fontsize"="16","style"="bold","label"="Facturacion\n","fontname"="sans-serif"]
+"GestionInventario" ["margin"="0.3","orientation"="16","shape"="egg","fontsize"="16","style"="bold","label"="GestionInventario\n","fontname"="sans-serif"]
+"CatalogoProductos" -> "ProcesamientoPedidos" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"CatalogoProductos" -> "GestionVentas" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"CatalogoProductos" -> "GestionInventario" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"ProcesamientoPedidos" -> "GestionClientes" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"GestionVentas" -> "ServiciosFotocopias" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"GestionVentas" -> "ServiciosEntrega" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"GestionVentas" -> "Facturacion" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+}
